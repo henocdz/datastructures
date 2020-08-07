@@ -23,6 +23,7 @@ func (l *LinkedList) Preppend(data int) {
 	}
 	if l.Head == nil {
 		l.Head = newNode
+		l.Length++
 		return
 	}
 
@@ -39,6 +40,7 @@ func (l *LinkedList) Push(value int) {
 	}
 	if l.Head == nil {
 		l.Head = newNode
+		l.Length++
 		return
 	}
 
@@ -69,6 +71,7 @@ func (l *LinkedList) InsertAt(data int, position uint) {
 
 	if l.Head == nil {
 		l.Head = newNode
+		l.Length++
 		return
 	}
 
