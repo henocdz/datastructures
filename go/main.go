@@ -49,6 +49,8 @@ func main() {
 	//stackItems := []int{15, 16, 17, 18, 19, 20}
 	//testListLike(stack, stackItems)
 
+	// TODO: Clean up and add menu, like in school.
+	// TODO: Add test cases.
 	trie := &collections.Trie{}
 	trie.Init()
 

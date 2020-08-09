@@ -84,6 +84,7 @@ func (t *Trie) Contains(term string) bool {
 
 func (t *Trie) findNodeWords(node *TrieNode, accRunes []rune, matchedWords [][]rune) [][]rune {
 	if node.endOfWord {
+		// TODO: include/calculate match %
 		matchedWords = append(matchedWords, accRunes)
 	}
 
