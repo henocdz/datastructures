@@ -4,21 +4,15 @@ import (
 	"fmt"
 )
 
-/*Node of LinkedList*/
-type Node struct {
-	Data int
-	Next   *Node
-}
-
 /*LinkedList type*/
 type LinkedList struct {
-	Head   *Node
+	Head   *BasicNode
 	Length int
 }
 
-// preppend add the received Node to the begining of the list
-func (l *LinkedList) Preppend(data int) {
-	newNode := &Node {
+// prepend add the received BasicNode to the beginning of the list
+func (l *LinkedList) Prepend(data int) {
+	newNode := &BasicNode{
 		Data: data,
 	}
 	if l.Head == nil {
@@ -33,10 +27,15 @@ func (l *LinkedList) Preppend(data int) {
 	return
 }
 
-// append add the received Node to the end of the list
-func (l *LinkedList) Push(value int) {
-	newNode := &Node{
-		Data: value,
+// IsEmpty
+func (l *LinkedList) IsEmpty() bool {
+	return l.Head == nil
+}
+
+// append add the received BasicNode to the end of the list
+func (l *LinkedList) Push(data int) {
+	newNode := &BasicNode{
+		Data: data,
 	}
 	if l.Head == nil {
 		l.Head = newNode
@@ -63,9 +62,9 @@ func (l *LinkedList) Print() {
 	}
 }
 
-// insertAt adds the given Node into the given position
+// insertAt adds the given BasicNode into the given position
 func (l *LinkedList) InsertAt(data int, position uint) {
-	newNode := &Node{
+	newNode := &BasicNode{
 		Data: data,
 	}
 
@@ -97,7 +96,7 @@ func (l *LinkedList) InsertAt(data int, position uint) {
 	l.Length++
 }
 
-// remove the Node at given position
+// remove the BasicNode at given position
 func (l *LinkedList) Pop(position uint) int {
 	if l.Head == nil {
 		panic("Index out of range.")
